@@ -140,6 +140,11 @@ def checkAttempts():
         return False
 
 def nextSteps(level):
+    '''
+    We have completed the quiz, now it's time for the student to figure out what
+    they want to do next.  They can exit or select the next level.
+    If they are at the end, they can choose to start over.
+    '''
     nextStep = input('Go to next quiz or exit? (next / exit): ').lower()
 
     if nextStep == 'next':
@@ -150,7 +155,7 @@ def nextSteps(level):
             initQuiz('hard')
         else:
             print('\nJust kidding, you did the last quiz. Start over or exit?\n')
-            nextStep = input('Type \'start over\' or \'exit\': ')
+            nextStep = input('Type \'start over\' or \'exit\': ').lower()
 
             if nextStep == 'start over':
                 selectAQuiz()
